@@ -23,30 +23,50 @@ namespace Controls
         public MainWindow()
         {
             InitializeComponent();
+
+            //Zuweisung eines weiteren EventHandlers zu dem CLick-Event des Buttons
+            Btn_KlickMich.Click += Btn_KlickMich_Click_2;
         }
 
+        //Event-Handler für das Click-Event des Buttons
         private void Btn_KlickMich_Click(object sender, RoutedEventArgs e)
         {
-            //Lbl_Output.Content = (Cbb_Auswahl.SelectedItem as ComboBoxItem).Content;
+            //Neuzuweisung der Content-Eigenschaft des Labels mit dem ausgewählten Inhalt der ComboBox
+            Lbl_Output.Content = (Cbb_Auswahl.SelectedItem as ComboBoxItem)?.Content;
 
-            //Wnd_Main.Background = new SolidColorBrush(Colors.Blue);
+            //Änderung der Hintergrundfarbe des Fensters
+            Wnd_Main.Background = new SolidColorBrush(Colors.Blue);
 
-            //MessageBox.Show(Tbx_Input.Text);
+            //MessageBox mit dem Inhalt der TextBox
+            MessageBox.Show(Tbx_Input.Text);
 
+            //Prüfung, ob die Checkbox abgehakt ist
+            if (Cbx_Haken.IsChecked == true)
+                //Anzeige einer MessageBox mit Inhalt der TextBox und Auswahl der ComboBox
+                MessageBox.Show(Tbx_Input.Text + "\n" + Cbb_Auswahl.Text);
+
+            //Anzeige einer MessageBox mit Wert des Sliders
             MessageBox.Show(Sdr_Wert.Value.ToString());
+        }
+
+        //Zweiter Eventhandeler des Buttons (siehe Konstruktor)
+        private void Btn_KlickMich_Click_2(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void Neu_MenuItem_Click(object sender, RoutedEventArgs e)
         {
+            //Öffen eines neuen Fensters als Dialogfenster
             MainWindow neuesFenster = new MainWindow();
-
             neuesFenster.ShowDialog();
         }
 
         private void Beenden_MenuItem_Click(object sender, RoutedEventArgs e)
         {
+            //Schließen des aktuellen Fensters
             this.Close();
-
+            //Schließen der kompletten Applikation
             Application.Current.Shutdown();
         }
     }

@@ -9,6 +9,8 @@
         x:Name="Wnd_Main">
     <StackPanel>
 
+        <!--Labels besitzen, wie die meisten Controls und alle Container eine Content-Eigenschaft, welche
+        mit weiteren Containern/Controls befüllt werden können (Auch hier darf nur ein Root-Element vohanden sein).-->
         <Label x:Name="Lbl_Output"
                Content="Hallo, ich bin ein String"
                Foreground="Red"
@@ -17,18 +19,24 @@
                BorderBrush="Black"
                BorderThickness="1"/>
 
+        <!--TextBlöcke sind Labels, welche auf Strings spezialisiert sind. Sie besitzen statt der
+            Content- die Text-Property-->
         <TextBlock x:Name="Tbl_Strings"
                    Text="Ich bin auch ein String"
                    FontFamily="Comic Sans MS"/>
 
+        <!--Buttons können von den Usern angeklickt werden, wodurch das Click-Event ausgelöst wird (vgl. CB)-->
         <Button x:Name="Btn_KlickMich"
                 Content="Klick mich"
                 Click="Btn_KlickMich_Click"/>
 
+        <!--Mittels des Image-Objekts können Grafiken angezeigt und formatiert werden-->
         <Image Source="C:\Users\kh2\Desktop\Material\ppedv.bmp"
                Stretch="Uniform"
                Height="60"/>
 
+        <!--In einer Textbox kann der User Strings eingeben. Mittels AcceptsReturn wird die Return-Taste für Zeilenumbrüche
+        freigegeben.-->
         <TextBox x:Name="Tbx_Input"
                  Text="Hallo"
                  Height="60"
@@ -37,6 +45,8 @@
                  TextWrapping="WrapWithOverflow"
                  VerticalScrollBarVisibility="Visible"/>
 
+        <!--ItemControls wie ComboBoxen oder ListViews können über die ItemsSource-Property mit Daten 
+        oder in XAML mit Items mit Content-Property bestückt werden-->
         <ComboBox x:Name="Cbb_Auswahl"
                   IsEditable="True">
             <ComboBoxItem Content="Item1"/>
@@ -44,15 +54,20 @@
             <ComboBoxItem Content="Auswahl3"/>
         </ComboBox>
 
+        <!--Checkboxen sind visuelle Repräsentationen von boolschen Werten. Mittels IsThreeState kann eine Checkbox einen von DREI
+        unterschiedlichen Zuständen annehmen.-->
         <CheckBox x:Name="Cbx_Haken"
                   Content="Hak mich ab"
                   IsChecked="{x:Null}"/>
 
+        <!--RadioButtons können einer Group zugeordnet werden, wodurch nur einer der Buttons angewählt sein darf-->
         <RadioButton Content="Auswahl1" GroupName="Rbt_Group_1"/>
         <RadioButton Content="Auswahl2" GroupName="Rbt_Group_1"/>
         <RadioButton Content="Auswahl3" GroupName="Rbt_Group_2"/>
         <RadioButton Content="Auswahl4" GroupName="Rbt_Group_2"/>
 
+        <!--Mittels Slidern kann der User einen numerischen Wert im definierten Bereich auswählen. Die Ticks geben dabei Hilfestellung
+        und definieren die auswählbareb Zahlenwerte.-->
         <Slider x:Name="Sdr_Wert"
                 Minimum="0"
                 Maximum="100"
@@ -61,14 +76,19 @@
                 TickFrequency="10"
                 IsSnapToTickEnabled="True"/>
 
+        <!--Seperatoren sind visuelle Abgrenzungen-->
         <Separator Margin="10"/>
 
+        <!--Mittels der ProgressBar können prozentuale Fortschritte visualisiert werden. Mit IsIndeterminate kann ein bewegender Balken
+        dargestellt werden.-->
         <ProgressBar Minimum="0"
                      Maximum="100"
                      Height="10"
                      Value="50"
                      IsIndeterminate="True"/>
 
+        <!--Menüs, wie ein Fenster-Menü (Menu) oder ein Kontext-Menü (ContextMenu) werden mit MenuItems befüllt.
+        Diese können ihrerseits weitere MenuItems aufnehmen, wodurch sich dann Untermenüs bilden-->
         <Menu>
             <MenuItem Header="Datei">
                 <MenuItem Header="Neu" Click="Neu_MenuItem_Click"/>
@@ -80,6 +100,7 @@
             </MenuItem>
         </Menu>
 
+        <!--Ribbons sind die 'neuen' MS-Menüs. Sie sind zu finden unter dem Namespace System.Windows.Controls.Ribbon-->
         <Ribbon>
             <Ribbon.ApplicationMenu>
                 <RibbonApplicationMenu>
