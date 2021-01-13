@@ -9,6 +9,7 @@
 
     <Window.Resources>
         <local:DoublesToBrushConverter x:Key="doubles2brush"/>
+        <SolidColorBrush Color="Black" x:Key="fallbackBrush"/>
     </Window.Resources>
 
     <StackPanel>
@@ -66,7 +67,7 @@
 
         </Grid>
 
-        <TextBlock Text="{Binding ElementName=Rct_Output, Path=Fill, StringFormat=Picked color: {0}, UpdateSourceTrigger=PropertyChanged}"
+        <TextBlock Text="{Binding ElementName=Rct_Output, Path=Fill, StringFormat=Picked color: {0}, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource fallbackBrush}}"
                    HorizontalAlignment="Center" Margin="5"/>
         <Border BorderBrush="Black" BorderThickness="1" Width="100">
             <Rectangle x:Name="Rct_Output" Width="100" Height="100">
@@ -78,6 +79,10 @@
                         <Binding ElementName="Sdr_Green" Path="Value"/>
                         <Binding ElementName="Sdr_Blue" Path="Value"/>
                         <Binding ElementName="Sdr_Alpha" Path="Value"/>
+                        
+                        <MultiBinding.FallbackValue>
+                            <SolidColorBrush Color="Black"/>
+                        </MultiBinding.FallbackValue>
                     </MultiBinding>
                 </Rectangle.Fill>
             </Rectangle>

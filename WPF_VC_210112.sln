@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modul06.1_Bindings", "Bindi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modul06.2_ColorPickerUebung", "ColorPickerUebung\Modul06.2_ColorPickerUebung.csproj", "{DD9A91F7-F6C3-4E64-8C22-41DBBBC2EF49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modul07_Styles", "Styles\Modul07_Styles.csproj", "{F3123520-67A3-4786-956F-CB453285B83C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{DD9A91F7-F6C3-4E64-8C22-41DBBBC2EF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD9A91F7-F6C3-4E64-8C22-41DBBBC2EF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD9A91F7-F6C3-4E64-8C22-41DBBBC2EF49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3123520-67A3-4786-956F-CB453285B83C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3123520-67A3-4786-956F-CB453285B83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3123520-67A3-4786-956F-CB453285B83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3123520-67A3-4786-956F-CB453285B83C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
