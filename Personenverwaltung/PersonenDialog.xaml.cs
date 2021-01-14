@@ -33,6 +33,8 @@ namespace Personenverwaltung
             if (neuePerson.Verheiratet) ausgabe = ausgabe + "\nIst verheiratet";
             if (MessageBox.Show(ausgabe + "\nAbspeichern?", neuePerson.Vorname + " " + neuePerson.Nachname, MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
             {
+                this.DialogResult = true;
+
                 this.Close();
             }
         }
