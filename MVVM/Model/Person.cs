@@ -8,8 +8,6 @@ using System.Windows.Media;
 
 namespace MVVM.Model
 {
-    public enum Gender { Männlich, Weiblich, Divers }
-
     public class Person : INotifyPropertyChanged, IDataErrorInfo
     {
         public static ObservableCollection<Person> Personenliste { get; set; } = new ObservableCollection<Person>();

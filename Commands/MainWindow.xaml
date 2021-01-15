@@ -15,10 +15,20 @@
     </Window.CommandBindings>
 
     <Window.InputBindings>
-        <KeyBinding Key="O" Modifiers="Ctrl" Command="{Binding CloseCmd}"/>
+        <KeyBinding Key="W" Modifiers="Ctrl" Command="{Binding CloseCmd}" CommandParameter="{Binding ElementName=Wnd_Main}"/>
+        <KeyBinding Key="N" Modifiers="Ctrl" Command="{Binding OeffnenCmd}" CommandParameter="{Binding ElementName=Tbx_Input, Path=Text}"/>
     </Window.InputBindings>
             
     <StackPanel>
+        <Menu>
+            <MenuItem Header="Datei">
+                <MenuItem Header="Neues Fenster"
+                          InputGestureText="Strg+N"
+                          Command="{Binding OeffnenCmd}" CommandParameter="{Binding ElementName=Tbx_Input, Path=Text}"/>
+               
+            </MenuItem>
+        </Menu>
+        
         <TextBox Height="100" AcceptsReturn="True" x:Name="Tbx_Input">
             <TextBox.ContextMenu>
                 <ContextMenu>
